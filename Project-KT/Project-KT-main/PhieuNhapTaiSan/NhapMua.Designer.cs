@@ -46,24 +46,27 @@
             this.lbTienHang = new System.Windows.Forms.Label();
             this.tbDes1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbTenTS = new System.Windows.Forms.TextBox();
+            this.cbMSTS = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numSL = new System.Windows.Forms.NumericUpDown();
+            this.btnCheckpso = new System.Windows.Forms.Button();
+            this.tbSoNKH = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.comboMKH = new System.Windows.Forms.ComboBox();
             this.btnThue = new System.Windows.Forms.Button();
             this.cbTkdu = new System.Windows.Forms.ComboBox();
-            this.dtpkNphathanh = new System.Windows.Forms.DateTimePicker();
-            this.dtpkNlap = new System.Windows.Forms.DateTimePicker();
             this.tbGia = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbHTTToan = new System.Windows.Forms.ComboBox();
             this.cbTK = new System.Windows.Forms.ComboBox();
             this.tbThue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbVAT = new System.Windows.Forms.TextBox();
-            this.lbThanhToan = new System.Windows.Forms.Label();
             this.lbTySuatGTGT = new System.Windows.Forms.Label();
             this.tbLyDo = new System.Windows.Forms.TextBox();
             this.lbLyDo = new System.Windows.Forms.Label();
-            this.lbNgayPhatHanh = new System.Windows.Forms.Label();
             this.tbSHD = new System.Windows.Forms.TextBox();
             this.lbSHD = new System.Windows.Forms.Label();
             this.tbTenTaiKhoan = new System.Windows.Forms.TextBox();
@@ -77,13 +80,10 @@
             this.tbPso = new System.Windows.Forms.TextBox();
             this.lbSoTT = new System.Windows.Forms.Label();
             this.lbNameForm = new System.Windows.Forms.Label();
-            this.lbNgaySD = new System.Windows.Forms.Label();
-            this.dtpkNSuDung = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbSoNKH = new System.Windows.Forms.TextBox();
-            this.btnCheckpso = new System.Windows.Forms.Button();
-            this.numSL = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.tbMSDV = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -290,31 +290,31 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.tbMSDV);
+            this.panel2.Controls.Add(this.lbTime);
+            this.panel2.Controls.Add(this.tbTenTS);
+            this.panel2.Controls.Add(this.cbMSTS);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.numSL);
             this.panel2.Controls.Add(this.btnCheckpso);
             this.panel2.Controls.Add(this.tbSoNKH);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.dtpkNSuDung);
-            this.panel2.Controls.Add(this.lbNgaySD);
             this.panel2.Controls.Add(this.comboMKH);
             this.panel2.Controls.Add(this.btnThue);
             this.panel2.Controls.Add(this.cbTkdu);
-            this.panel2.Controls.Add(this.dtpkNphathanh);
-            this.panel2.Controls.Add(this.dtpkNlap);
             this.panel2.Controls.Add(this.tbGia);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cbHTTToan);
             this.panel2.Controls.Add(this.cbTK);
             this.panel2.Controls.Add(this.tbThue);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.tbVAT);
-            this.panel2.Controls.Add(this.lbThanhToan);
             this.panel2.Controls.Add(this.lbTySuatGTGT);
             this.panel2.Controls.Add(this.tbLyDo);
             this.panel2.Controls.Add(this.lbLyDo);
-            this.panel2.Controls.Add(this.lbNgayPhatHanh);
             this.panel2.Controls.Add(this.tbSHD);
             this.panel2.Controls.Add(this.lbSHD);
             this.panel2.Controls.Add(this.tbTenTaiKhoan);
@@ -333,12 +333,100 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1044, 268);
             this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // tbTenTS
+            // 
+            this.tbTenTS.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.tbTenTS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenTS.ForeColor = System.Drawing.Color.MediumBlue;
+            this.tbTenTS.Location = new System.Drawing.Point(207, 93);
+            this.tbTenTS.Margin = new System.Windows.Forms.Padding(0);
+            this.tbTenTS.Name = "tbTenTS";
+            this.tbTenTS.ReadOnly = true;
+            this.tbTenTS.Size = new System.Drawing.Size(236, 22);
+            this.tbTenTS.TabIndex = 65;
+            this.tbTenTS.Text = "Phải trả cho người bán";
+            this.tbTenTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbMSTS
+            // 
+            this.cbMSTS.FormattingEnabled = true;
+            this.cbMSTS.Location = new System.Drawing.Point(83, 93);
+            this.cbMSTS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMSTS.Name = "cbMSTS";
+            this.cbMSTS.Size = new System.Drawing.Size(121, 24);
+            this.cbMSTS.TabIndex = 64;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label2.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label2.Location = new System.Drawing.Point(8, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 18);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "MSTS";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label6.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label6.Location = new System.Drawing.Point(26, 228);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 18);
+            this.label6.TabIndex = 62;
+            this.label6.Text = "Số lượng:";
+            // 
+            // numSL
+            // 
+            this.numSL.Location = new System.Drawing.Point(103, 224);
+            this.numSL.Name = "numSL";
+            this.numSL.Size = new System.Drawing.Size(120, 22);
+            this.numSL.TabIndex = 61;
+            // 
+            // btnCheckpso
+            // 
+            this.btnCheckpso.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCheckpso.Location = new System.Drawing.Point(927, 4);
+            this.btnCheckpso.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheckpso.Name = "btnCheckpso";
+            this.btnCheckpso.Size = new System.Drawing.Size(73, 32);
+            this.btnCheckpso.TabIndex = 60;
+            this.btnCheckpso.Text = "Check";
+            this.btnCheckpso.UseVisualStyleBackColor = true;
+            this.btnCheckpso.Click += new System.EventHandler(this.btnCheckpso_Click);
+            // 
+            // tbSoNKH
+            // 
+            this.tbSoNKH.BackColor = System.Drawing.Color.Snow;
+            this.tbSoNKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSoNKH.ForeColor = System.Drawing.Color.Red;
+            this.tbSoNKH.Location = new System.Drawing.Point(607, 158);
+            this.tbSoNKH.Margin = new System.Windows.Forms.Padding(0);
+            this.tbSoNKH.Name = "tbSoNKH";
+            this.tbSoNKH.Size = new System.Drawing.Size(39, 22);
+            this.tbSoNKH.TabIndex = 59;
+            this.tbSoNKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label5.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label5.Location = new System.Drawing.Point(462, 161);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 18);
+            this.label5.TabIndex = 58;
+            this.label5.Text = "Số năm khấu hao:";
             // 
             // comboMKH
             // 
             this.comboMKH.FormattingEnabled = true;
-            this.comboMKH.Location = new System.Drawing.Point(131, 75);
-            this.comboMKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboMKH.Location = new System.Drawing.Point(351, 65);
+            this.comboMKH.Margin = new System.Windows.Forms.Padding(4);
             this.comboMKH.Name = "comboMKH";
             this.comboMKH.Size = new System.Drawing.Size(160, 24);
             this.comboMKH.TabIndex = 55;
@@ -348,7 +436,7 @@
             // 
             this.btnThue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnThue.Location = new System.Drawing.Point(927, 214);
-            this.btnThue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThue.Margin = new System.Windows.Forms.Padding(4);
             this.btnThue.Name = "btnThue";
             this.btnThue.Size = new System.Drawing.Size(73, 41);
             this.btnThue.TabIndex = 54;
@@ -359,32 +447,12 @@
             // cbTkdu
             // 
             this.cbTkdu.FormattingEnabled = true;
-            this.cbTkdu.Location = new System.Drawing.Point(755, 100);
+            this.cbTkdu.Location = new System.Drawing.Point(857, 99);
             this.cbTkdu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTkdu.Name = "cbTkdu";
             this.cbTkdu.Size = new System.Drawing.Size(121, 24);
             this.cbTkdu.TabIndex = 53;
             this.cbTkdu.SelectedIndexChanged += new System.EventHandler(this.cbTkdu_SelectedIndexChanged);
-            // 
-            // dtpkNphathanh
-            // 
-            this.dtpkNphathanh.CustomFormat = "";
-            this.dtpkNphathanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpkNphathanh.Location = new System.Drawing.Point(857, 135);
-            this.dtpkNphathanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpkNphathanh.Name = "dtpkNphathanh";
-            this.dtpkNphathanh.Size = new System.Drawing.Size(159, 22);
-            this.dtpkNphathanh.TabIndex = 52;
-            // 
-            // dtpkNlap
-            // 
-            this.dtpkNlap.CustomFormat = "";
-            this.dtpkNlap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpkNlap.Location = new System.Drawing.Point(131, 43);
-            this.dtpkNlap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpkNlap.Name = "dtpkNlap";
-            this.dtpkNlap.Size = new System.Drawing.Size(200, 22);
-            this.dtpkNlap.TabIndex = 51;
             // 
             // tbGia
             // 
@@ -414,20 +482,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label3.Location = new System.Drawing.Point(701, 102);
+            this.label3.Location = new System.Drawing.Point(737, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 18);
             this.label3.TabIndex = 47;
             this.label3.Text = "TKdu:";
-            // 
-            // cbHTTToan
-            // 
-            this.cbHTTToan.FormattingEnabled = true;
-            this.cbHTTToan.Location = new System.Drawing.Point(156, 228);
-            this.cbHTTToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbHTTToan.Name = "cbHTTToan";
-            this.cbHTTToan.Size = new System.Drawing.Size(121, 24);
-            this.cbHTTToan.TabIndex = 44;
             // 
             // cbTK
             // 
@@ -480,17 +539,6 @@
             this.tbVAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbVAT.TextChanged += new System.EventHandler(this.tbVAT_TextChanged);
             // 
-            // lbThanhToan
-            // 
-            this.lbThanhToan.AutoSize = true;
-            this.lbThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lbThanhToan.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbThanhToan.Location = new System.Drawing.Point(3, 229);
-            this.lbThanhToan.Name = "lbThanhToan";
-            this.lbThanhToan.Size = new System.Drawing.Size(147, 18);
-            this.lbThanhToan.TabIndex = 36;
-            this.lbThanhToan.Text = "Hình thức thanh toán:";
-            // 
             // lbTySuatGTGT
             // 
             this.lbTySuatGTGT.AutoSize = true;
@@ -527,23 +575,12 @@
             this.lbLyDo.TabIndex = 32;
             this.lbLyDo.Text = "Lý do:";
             // 
-            // lbNgayPhatHanh
-            // 
-            this.lbNgayPhatHanh.AutoSize = true;
-            this.lbNgayPhatHanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lbNgayPhatHanh.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbNgayPhatHanh.Location = new System.Drawing.Point(737, 138);
-            this.lbNgayPhatHanh.Name = "lbNgayPhatHanh";
-            this.lbNgayPhatHanh.Size = new System.Drawing.Size(114, 18);
-            this.lbNgayPhatHanh.TabIndex = 30;
-            this.lbNgayPhatHanh.Text = "Ngày phát hành:";
-            // 
             // tbSHD
             // 
             this.tbSHD.BackColor = System.Drawing.Color.Snow;
             this.tbSHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSHD.ForeColor = System.Drawing.Color.Red;
-            this.tbSHD.Location = new System.Drawing.Point(576, 105);
+            this.tbSHD.Location = new System.Drawing.Point(103, 11);
             this.tbSHD.Margin = new System.Windows.Forms.Padding(0);
             this.tbSHD.Name = "tbSHD";
             this.tbSHD.Size = new System.Drawing.Size(113, 22);
@@ -555,7 +592,7 @@
             this.lbSHD.AutoSize = true;
             this.lbSHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lbSHD.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbSHD.Location = new System.Drawing.Point(468, 105);
+            this.lbSHD.Location = new System.Drawing.Point(8, 10);
             this.lbSHD.Name = "lbSHD";
             this.lbSHD.Size = new System.Drawing.Size(89, 18);
             this.lbSHD.TabIndex = 28;
@@ -566,7 +603,7 @@
             this.tbTenTaiKhoan.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tbTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenTaiKhoan.ForeColor = System.Drawing.Color.MediumBlue;
-            this.tbTenTaiKhoan.Location = new System.Drawing.Point(197, 128);
+            this.tbTenTaiKhoan.Location = new System.Drawing.Point(207, 129);
             this.tbTenTaiKhoan.Margin = new System.Windows.Forms.Padding(0);
             this.tbTenTaiKhoan.Name = "tbTenTaiKhoan";
             this.tbTenTaiKhoan.ReadOnly = true;
@@ -592,7 +629,7 @@
             this.tbDiaChi.BackColor = System.Drawing.Color.Snow;
             this.tbDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDiaChi.ForeColor = System.Drawing.Color.Blue;
-            this.tbDiaChi.Location = new System.Drawing.Point(83, 101);
+            this.tbDiaChi.Location = new System.Drawing.Point(665, 70);
             this.tbDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDiaChi.Name = "tbDiaChi";
             this.tbDiaChi.Size = new System.Drawing.Size(351, 22);
@@ -604,7 +641,7 @@
             this.lbDiaChi.AutoSize = true;
             this.lbDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lbDiaChi.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbDiaChi.Location = new System.Drawing.Point(3, 101);
+            this.lbDiaChi.Location = new System.Drawing.Point(524, 71);
             this.lbDiaChi.Name = "lbDiaChi";
             this.lbDiaChi.Size = new System.Drawing.Size(57, 18);
             this.lbDiaChi.TabIndex = 19;
@@ -615,7 +652,7 @@
             this.tbTenKH.BackColor = System.Drawing.Color.Snow;
             this.tbTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTenKH.ForeColor = System.Drawing.Color.Red;
-            this.tbTenKH.Location = new System.Drawing.Point(579, 66);
+            this.tbTenKH.Location = new System.Drawing.Point(665, 45);
             this.tbTenKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbTenKH.Name = "tbTenKH";
             this.tbTenKH.ReadOnly = true;
@@ -628,7 +665,7 @@
             this.lbDonVi.AutoSize = true;
             this.lbDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lbDonVi.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbDonVi.Location = new System.Drawing.Point(435, 66);
+            this.lbDonVi.Location = new System.Drawing.Point(524, 47);
             this.lbDonVi.Name = "lbDonVi";
             this.lbDonVi.Size = new System.Drawing.Size(122, 18);
             this.lbDonVi.TabIndex = 17;
@@ -640,7 +677,7 @@
             this.lbMaKhach.AutoSize = true;
             this.lbMaKhach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lbMaKhach.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbMaKhach.Location = new System.Drawing.Point(3, 70);
+            this.lbMaKhach.Location = new System.Drawing.Point(250, 66);
             this.lbMaKhach.Name = "lbMaKhach";
             this.lbMaKhach.Size = new System.Drawing.Size(77, 18);
             this.lbMaKhach.TabIndex = 14;
@@ -668,7 +705,7 @@
             this.tbPso.Name = "tbPso";
             this.tbPso.Size = new System.Drawing.Size(127, 22);
             this.tbPso.TabIndex = 4;
-            this.tbPso.Text = "NTSC0001-06-12";
+            this.tbPso.Text = "NTSC00001-01-21";
             // 
             // lbSoTT
             // 
@@ -692,79 +729,49 @@
             this.lbNameForm.TabIndex = 2;
             this.lbNameForm.Text = "PHIẾU NHẬP TÀI SẢN";
             // 
-            // lbNgaySD
+            // lbTime
             // 
-            this.lbNgaySD.AutoSize = true;
-            this.lbNgaySD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.lbNgaySD.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbNgaySD.Location = new System.Drawing.Point(737, 163);
-            this.lbNgaySD.Name = "lbNgaySD";
-            this.lbNgaySD.Size = new System.Drawing.Size(102, 18);
-            this.lbNgaySD.TabIndex = 56;
-            this.lbNgaySD.Text = "Ngày sử dụng:";
+            this.lbTime.AutoSize = true;
+            this.lbTime.BackColor = System.Drawing.SystemColors.Control;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.lbTime.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lbTime.Location = new System.Drawing.Point(100, 45);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(0, 18);
+            this.lbTime.TabIndex = 68;
             // 
-            // dtpkNSuDung
+            // tbMSDV
             // 
-            this.dtpkNSuDung.CustomFormat = "";
-            this.dtpkNSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpkNSuDung.Location = new System.Drawing.Point(857, 161);
-            this.dtpkNSuDung.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpkNSuDung.Name = "dtpkNSuDung";
-            this.dtpkNSuDung.Size = new System.Drawing.Size(159, 22);
-            this.dtpkNSuDung.TabIndex = 57;
+            this.tbMSDV.AutoSize = true;
+            this.tbMSDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.tbMSDV.ForeColor = System.Drawing.Color.MediumBlue;
+            this.tbMSDV.Location = new System.Drawing.Point(462, 130);
+            this.tbMSDV.Name = "tbMSDV";
+            this.tbMSDV.Size = new System.Drawing.Size(78, 18);
+            this.tbMSDV.TabIndex = 69;
+            this.tbMSDV.Text = "Mã số DV:";
             // 
-            // label5
+            // textBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label5.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label5.Location = new System.Drawing.Point(462, 161);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 18);
-            this.label5.TabIndex = 58;
-            this.label5.Text = "Số năm khấu hao:";
+            this.textBox1.BackColor = System.Drawing.Color.Snow;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Red;
+            this.textBox1.Location = new System.Drawing.Point(552, 130);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(113, 22);
+            this.textBox1.TabIndex = 70;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbSoNKH
+            // label7
             // 
-            this.tbSoNKH.BackColor = System.Drawing.Color.Snow;
-            this.tbSoNKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSoNKH.ForeColor = System.Drawing.Color.Red;
-            this.tbSoNKH.Location = new System.Drawing.Point(607, 158);
-            this.tbSoNKH.Margin = new System.Windows.Forms.Padding(0);
-            this.tbSoNKH.Name = "tbSoNKH";
-            this.tbSoNKH.Size = new System.Drawing.Size(39, 22);
-            this.tbSoNKH.TabIndex = 59;
-            this.tbSoNKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnCheckpso
-            // 
-            this.btnCheckpso.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCheckpso.Location = new System.Drawing.Point(927, 4);
-            this.btnCheckpso.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCheckpso.Name = "btnCheckpso";
-            this.btnCheckpso.Size = new System.Drawing.Size(73, 32);
-            this.btnCheckpso.TabIndex = 60;
-            this.btnCheckpso.Text = "Check";
-            this.btnCheckpso.UseVisualStyleBackColor = true;
-            this.btnCheckpso.Click += new System.EventHandler(this.btnCheckpso_Click);
-            // 
-            // numSL
-            // 
-            this.numSL.Location = new System.Drawing.Point(360, 201);
-            this.numSL.Name = "numSL";
-            this.numSL.Size = new System.Drawing.Size(120, 22);
-            this.numSL.TabIndex = 61;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label6.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label6.Location = new System.Drawing.Point(260, 201);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 18);
-            this.label6.TabIndex = 62;
-            this.label6.Text = "Số lượng:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label7.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label7.Location = new System.Drawing.Point(876, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 18);
+            this.label7.TabIndex = 71;
             // 
             // NhapMua
             // 
@@ -802,11 +809,9 @@
         private System.Windows.Forms.TextBox tbThue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbVAT;
-        private System.Windows.Forms.Label lbThanhToan;
         private System.Windows.Forms.Label lbTySuatGTGT;
         private System.Windows.Forms.TextBox tbLyDo;
         private System.Windows.Forms.Label lbLyDo;
-        private System.Windows.Forms.Label lbNgayPhatHanh;
         private System.Windows.Forms.TextBox tbSHD;
         private System.Windows.Forms.Label lbSHD;
         private System.Windows.Forms.TextBox tbTenTaiKhoan;
@@ -824,7 +829,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cbHTTToan;
         private System.Windows.Forms.ComboBox cbTK;
         private System.Windows.Forms.DataGridViewTextBoxColumn tkdu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MSTS;
@@ -833,18 +837,21 @@
         private System.Windows.Forms.TextBox tbGia;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpkNphathanh;
-        private System.Windows.Forms.DateTimePicker dtpkNlap;
         private System.Windows.Forms.ComboBox cbTkdu;
         private System.Windows.Forms.Button btnThue;
         private System.Windows.Forms.ComboBox comboMKH;
-        private System.Windows.Forms.DateTimePicker dtpkNSuDung;
-        private System.Windows.Forms.Label lbNgaySD;
         private System.Windows.Forms.TextBox tbSoNKH;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCheckpso;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numSL;
+        private System.Windows.Forms.TextBox tbTenTS;
+        private System.Windows.Forms.ComboBox cbMSTS;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label tbMSDV;
+        private System.Windows.Forms.Label label7;
     }
 }
 

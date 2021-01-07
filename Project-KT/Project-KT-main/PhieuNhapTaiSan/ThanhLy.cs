@@ -39,7 +39,7 @@ namespace PhieuNhapTaiSan
         private void LoadTKduDBCombox()
         {
             con.Open();
-            string sql = "select MaTK from TK where MaTK like 'N%'";
+            string sql = "select MaTK from DMTK where MaTK like 'N%'";
             SqlCommand com = new SqlCommand(sql, con); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
@@ -54,7 +54,7 @@ namespace PhieuNhapTaiSan
         private void LoadTKhoanDBCombox()
         {
             con.Open();
-            string sql = "select MaTK,TenMaTK from TK";
+            string sql = "select MaTK,TenMaTK from DMTK";
             SqlCommand com = new SqlCommand(sql, con); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve

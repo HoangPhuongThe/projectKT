@@ -87,6 +87,23 @@ namespace PhieuNhapTaiSan
 
         }
 
+        private void LoadMSTSDBCombox()
+        {
+            con.Open();
+            string sql = "select MSTS,tenTS from DMTS";
+            SqlCommand com = new SqlCommand(sql, con); //bat dau truy van
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+            DataSet ds = new DataSet(); //tạo một kho ảo để lưu trữ dữ liệu
+            da.Fill(ds);  // đổ dữ liệu vào kho
+            cbMSTS.DataSource = ds.Tables[0];
+            cbMSTS.DisplayMember = "MSTS";
+            cbMSTS.ValueMember = "tenTS";
+            tbTenTS.DataBindings.Add("Text", cbMSTS.DataSource, "tenTS");
+            con.Close();  // đóng kết nối
+
+        }
+
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -107,6 +124,24 @@ namespace PhieuNhapTaiSan
         {
 
         }
+        /*public void AutoIncre()
+        {
+            string[] mang = tbPso.Text.ToString().Split('C', '-');
+            int chuoi = Int32.Parse(mang[1]);
+            chuoi++;
+            tbPso.Text = "NTSC0000" + chuoi.ToString() + "-1-21s";
+        }*/
+       /* public void AutoIncreHoaDon()
+        {
+            int dem = Int32.Parse(tbSHD.Text.ToString());
+            dem++;
+            tbSHD.Text = "" + dem.ToString();
+        }
+        public void AutoMSDV()
+        {
+            int msdv = Int32.Parse(tbMSDV.Text.ToString());
+            tbMSDV.Text = msdv.ToString();
+        }*/
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -117,19 +152,42 @@ namespace PhieuNhapTaiSan
 
                 SqlCommand cmd = new SqlCommand(sql, con);*/
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO [ketoan].[dbo].[TS](tkdu,st,sl,nsudung,snkh,pso) VALUES " +
-                    "    ('" + cbTkdu.Text + "','" + tbGia.Text + "','" + numSL.Text + "','" + dtpkNSuDung.Text + "','" + tbSoNKH.Text + "','" + tbPso.Text + "');", con);
-                cmd.ExecuteNonQuery();
+                /*SqlCommand cmd = new SqlCommand("INSERT INTO [ketoan].[dbo].[TS](tkdu,st,sl,nsudung,snkh,pso) VALUES " +
+                    "    ('" + cbTkdu.Text + "','" + tbGia.Text + "','" + numSL.Text + "','" + dtpkNSuDung.Value + "','" + tbSoNKH.Text + "','" + tbPso.Text + "');", con);
+                cmd.ExecuteNonQuery();*/
+                //DateTime date = Convert.ToDateTime();
+
+                /*SqlCommand cmd = new SqlCommand("INSERT INTO [ketoan].[dbo].[TS] (tkdu,st,sl,nsudung,snkh,pso) VALUES (@tkdu,@st,@sl,@nsudung,@snkh,@pso)", con);
+                cmd.Parameters.AddWithValue("@tkdu", cbTkdu.Text);
+                cmd.Parameters.AddWithValue("@st", tbGia.Text);
+                cmd.Parameters.AddWithValue("@sl", numSL.Text);
+                cmd.Parameters.AddWithValue("@nsudung", dtpkNgSuDung.Text);
+                cmd.Parameters.AddWithValue("@snkh", tbSoNKH.Text);
+                cmd.Parameters.AddWithValue("@pso", tbPso.Text);
+
+                cmd.ExecuteNonQuery();*/
 
 
-                /*SqlCommand cmd2 = new SqlCommand("INSERT INTO [KT].[dbo].[PH](pso,MSKH,ten,ldo,diachi) VALUES " +
-                    "    ('" + tbPso.Text + "','" + tbDonVi.Text + "','" + tbLyDo.Text + "','" + tbDiaChi.Text  + "');", con);
+                /*con.Close();
+                MessageBox.Show("Dữ liệu đã được thêm vào ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
 
-                cmd2.ExecuteNonQuery();*/
-
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO [ketoan].[dbo].[TS](tkdu,MSTS,st,sl,nsdung,snkh,MSDV,pso) VALUES " +
+                    "    ('" + cbTkdu.Text + "','" + cbMSTS.Text + "','" + tbGia.Text + "','" + numSL.Text + "','" + lbTime.Text + "','" + tbSoNKH.Text + "','" + textBox1.Text + "','" + tbPso.Text + "');", con))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                //using (SqlCommand cmd1 = new SqlCommand("INSERT INTO [HTTTKT].[dbo].[ph$](ten,nlap,MSKH,pso,tk,nky,ldo,MSDV,thuesuat,tgtgt,sohd,nphhd,diachi) VALUES (N'" + txtTnb.Text + "','" + lbTime.Text + "','" + txtMSKH.Text + "','" +  txtsophieu.Text  + "','" + txtTk.Text + "','" + lbTime.Text + "','" + txtLydo.Text + "','" + txtMSDV.Text + "','" + txtThue.Text + "','" + txtTienthue.Text + "','" + txtHoadon.Text + "','" + lbTime.Text + "','" + txtDiachi.Text + "')", con))
+                /*using (SqlCommand cmd1 = new SqlCommand("INSERT INTO [ketoan].[dbo].[PH](pso,nlap,MSKH,ten,tk,nky,ldo,MSDV,thuesuat,tgtgt,sohd,nphhd,diachi) VALUES " +
+                    "(N'" + tbPso.Text + "','" + lbTime.Text + "','" + comboMKH.Text + "','" + tbTenKH.Text + "','" + lbTime.Text + "','" + tbLyDo.Text + "','" + textBox1.Text + "','" + tbMSDV.Text + "','" + tbVAT.Text+ "','" + tbThue.Text + "','" + tbSHD.Text + "','" + lbTime.Text + "','" + tbDiaChi.Text + "')", con))
+                {
+                    cmd1.ExecuteNonQuery();
+                }*/
                 con.Close();
                 MessageBox.Show("Dữ liệu đã được thêm vào ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            /*AutoIncre();*/
+            /*AutoIncreHoaDon();
+            AutoMSDV();*/
         }
         public DataTable XemDL(string sql)
         {
@@ -148,6 +206,11 @@ namespace PhieuNhapTaiSan
             this.LoadTKduDBCombox();
             this.LoadTKhoanDBCombox();
             this.LoadKHangDBCombox();
+            this.LoadMSTSDBCombox();
+
+            DateTime tn = DateTime.Now;
+            lbTime.Text = tn.ToString("yyyy'-'MM'-'dd HH':'mm':'ss''");
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void tbNgayLap_TextChanged(object sender, EventArgs e)
@@ -225,6 +288,11 @@ namespace PhieuNhapTaiSan
         private void btnCheckpso_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = XemDL("select * from ts where pso like '%" + tbPso.Text.Trim() + "%' ");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
